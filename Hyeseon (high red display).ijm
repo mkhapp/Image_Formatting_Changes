@@ -34,7 +34,9 @@ function SaveAsJPEG(path, imagepath) {
 	run("RGB Color");
 	selectImage("Image-0003");
 	run("Cyan");
-	run("Enhance Contrast", "saturated=0.05");
+	run("Enhance Contrast", "saturated=0.01");
+	getMinAndMax(min, max);
+	setMinAndMax(max/4, max);
 	run("RGB Color");
 	run("Merge Channels...", "c1=Image-0002 c5=Image-0003 keep");
 	run("Combine...", "stack1=Image-0002 stack2=Image-0003");
